@@ -1,0 +1,15 @@
+{
+  "name": "uuid-example-node-experimental-modules",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "engine": {
+    "node": ">= 12"
+  },
+  "scripts": {
+    "test": "node --experimental-modules example.js"
+  },
+  "dependencies": {
+    "uuid": "github:ctavan/uuid-esm#master"
+  }
+}
