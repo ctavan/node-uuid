@@ -40,8 +40,7 @@
     "test": "npm run lint && mocha --require esm --reporter spec --check-leaks test/test.js",
     "md": "runmd --watch --output=README.md README_js.md",
     "package": "./scripts/package.sh",
-    "release": "standard-version",
-    "prepare": "runmd --output=README.md README_js.md"
+    "release": "standard-version"
   },
   "browser": {
     "./lib/rng.js": "./lib/rng-browser.js",
