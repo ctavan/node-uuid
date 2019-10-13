@@ -22,14 +22,14 @@ Simple, fast generation of [RFC4122](http://www.ietf.org/rfc/rfc4122.txt) UUIDS.
 Features:
 
 * Support for version 1, 3, 4 and 5 UUIDs
-* Cross-platform
+* Cross-platform, including [ECMAScript Modules](#ecmascript-modules)
 * Uses cryptographically-strong random number APIs (when available)
 * Zero-dependency, small footprint (... but not [this small](https://gist.github.com/982883))
 
 [**Deprecation warning**: The use of `require('uuid')` is deprecated and will not be
 supported after version 3.x of this module.  Instead, use `require('uuid/[v1|v3|v4|v5]')` as shown in the examples below.]
 
-## Quickstart - CommonJS (Recommended)
+## Quickstart - Node.js/CommonJS
 
 ```shell
 npm install uuid
@@ -88,6 +88,22 @@ uuidv5('http://example.com/hello', uuidv5.URL); // RESULT
 const MY_NAMESPACE = '1b671a64-40d5-491e-99b0-da01ff1f3341';
 uuidv5('Hello, World!', MY_NAMESPACE); // RESULT
 ```
+
+## ECMAScript Modules
+
+For usage in the browser `uuid` provides support for [ECMAScript
+Modules](https://www.ecma-international.org/ecma-262/6.0/#sec-modules) (ESM) that enables tree-shaking
+for bundlers, like [rollup.js](https://rollupjs.org/guide/en/#tree-shaking) and
+[webpack](https://webpack.js.org/guides/tree-shaking/).
+
+```javascript --run esm-v4
+import {v4 as uuidv4} from 'uuid';
+uuidv4(); // RESULT
+```
+
+There is experimental ESM support for [the browser](./examples/browser-esmodules/) and for [`node
+--experimental-modules`](./examples/node-experimental-modules/). These features should be
+considered experimental and may change or disappear in future releases.
 
 ## API
 
