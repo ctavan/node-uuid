@@ -15,11 +15,15 @@ DIR=${PACKAGE_OUTPUT_PATH:-"$ROOT/tmp/package"}
 rm -rf "$DIR"
 mkdir -p "$DIR"
 
-# Traspile CommonJS versions of files
+# Transpile CommonJS versions of files
 env TARGET='commonjs' babel src --source-root src --out-dir "$DIR" --copy-files --quiet
 
-# Traspile ESM versions of files for node
+# Transpile ESM versions of files for node
 env TARGET='esm' babel src --source-root src --out-dir "$DIR/esm-node" --copy-files --quiet
+
+# No need to have the CLI files in the esm builk
+rm -rf "$DIR/esm-node/bin"
+rm -rf "$DIR/esm-node/uuid-bin.js"
 
 cp -a "$DIR/esm-node" "$DIR/esm-browser"
 
@@ -35,7 +39,7 @@ rm -f "$DIR"/esm-node/lib/*-browser.js
 echo "Renaming node-specific esm files to .mjs"
 for FILE in $( find "$DIR/esm-node" -name '*.js' )
 do
-    sed -ie "s/\.js'/.mjs'/" "$FILE"
+    sed -i '' -e "s/\.js'/.mjs'/" "$FILE"
     mv "$FILE" "${FILE%.js}.mjs"
 done
 
