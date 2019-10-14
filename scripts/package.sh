@@ -37,7 +37,7 @@ echo "Removing browser-specific files from esm-node"
 rm -f "$DIR"/esm-node/*-browser.js
 
 echo "Renaming node-specific esm files to .mjs"
-for FILE in $( find "$DIR/esm-node" -name '*.js' )
+for FILE in "$DIR"/esm-node/*.js
 do
     sed -i '' -e "s/\.js'/.mjs'/" "$FILE"
     mv "$FILE" "${FILE%.js}.mjs"
