@@ -27,14 +27,14 @@ rm -rf "$DIR/esm-node/uuid-bin.js"
 
 cp -a "$DIR/esm-node" "$DIR/esm-browser"
 
-for FILE in "$DIR"/esm-browser/lib/*-browser.js
+for FILE in "$DIR"/esm-browser/*-browser.js
 do
     echo "Replacing node-specific file for esm-browser: $FILE"
     mv "$FILE" "${FILE/-browser.js/.js}"
 done
 
 echo "Removing browser-specific files from esm-node"
-rm -f "$DIR"/esm-node/lib/*-browser.js
+rm -f "$DIR"/esm-node/*-browser.js
 
 echo "Renaming node-specific esm files to .mjs"
 for FILE in $( find "$DIR/esm-node" -name '*.js' )
