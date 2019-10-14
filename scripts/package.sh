@@ -27,25 +27,23 @@ rm -rf "$DIR/esm-node/uuid-bin.js"
 
 cp -a "$DIR/esm-node" "$DIR/esm-browser"
 
-for FILE in "$DIR"/esm-browser/*-browser.js
-do
-    echo "Replacing node-specific file for esm-browser: $FILE"
-    mv "$FILE" "${FILE/-browser.js/.js}"
+for FILE in "$DIR"/esm-browser/*-browser.js; do
+  echo "Replacing node-specific file for esm-browser: $FILE"
+  mv "$FILE" "${FILE/-browser.js/.js}"
 done
 
 echo "Removing browser-specific files from esm-node"
 rm -f "$DIR"/esm-node/*-browser.js
 
 echo "Renaming node-specific esm files to .mjs"
-for FILE in "$DIR"/esm-node/*.js
-do
-    sed -i '' -e "s/\.js'/.mjs'/" "$FILE"
-    mv "$FILE" "${FILE%.js}.mjs"
+for FILE in "$DIR"/esm-node/*.js; do
+  sed -i '' -e "s/\.js'/.mjs'/" "$FILE"
+  mv "$FILE" "${FILE%.js}.mjs"
 done
 
 # Copy basic files
-for PATTERN in CHANGELOG.md \
-  package.json \
+for PATTERN in package.json \
+  CHANGELOG.md \
   LICENSE.md \
   README.md
 do
