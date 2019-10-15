@@ -1,19 +1,19 @@
-const presets = [];
-const plugins = [
-  '@babel/plugin-transform-block-scoping',
-];
-
-if (process.env.TARGET !== 'esm') {
-  plugins.push('@babel/plugin-transform-modules-commonjs');
-  plugins.push('babel-plugin-add-module-exports');
-  presets.push(['@babel/preset-env', {
-    targets: {
-      node: '8'
-    },
-  }]);
-}
-
 module.exports = {
-  presets,
-  plugins,
+  presets: [],
+  plugins: [],
+  env: {
+    commonjs: {
+      plugins: [
+        'babel-plugin-add-module-exports',
+      ],
+      presets: [
+        ['@babel/preset-env', {targets: {node: '8'}, modules: 'commonjs'}],
+      ],
+    },
+    esm: {
+      presets: [
+        ['@babel/preset-env', {modules: false}],
+      ],
+    },
+  },
 };

@@ -1,13 +1,13 @@
 import assert from 'assert';
-import md5 from '../src/md5.js';
-import md5Browser from '../src/md5-browser.js';
-import rng from '../src/rng.js';
-import rngBrowser from '../src/rng-browser.js';
-import sha1 from '../src/sha1.js';
-import sha1Browser from '../src/sha1-browser.js';
-import v1 from '../src/v1.js';
-import v3 from '../src/v3.js';
-import v5 from '../src/v5.js';
+import md5 from '../src/md5';
+import md5Browser from '../src/md5-browser';
+import rng from '../src/rng';
+import rngBrowser from '../src/rng-browser';
+import sha1 from '../src/sha1';
+import sha1Browser from '../src/sha1-browser';
+import v1 from '../src/v1';
+import v3 from '../src/v3';
+import v5 from '../src/v5';
 
 describe('rng', () => {
   it('nodeRNG', function() {

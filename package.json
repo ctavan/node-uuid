@@ -17,13 +17,12 @@
     "uuid": "./bin/uuid"
   },
   "sideEffects": false,
-  "main": "index.js",
+  "main": "index",
   "module": "esm-browser/index.js",
   "devDependencies": {
     "@babel/cli": "~7.6.0",
     "@babel/core": "~7.6.0",
     "@babel/plugin-transform-block-scoping": "~7.6.0",
-    "@babel/plugin-transform-modules-commonjs": "~7.6.0",
     "@babel/preset-env": "~7.6.3",
     "@commitlint/cli": "~8.2.0",
     "@commitlint/config-conventional": "~8.2.0",

@@ -1,5 +1,5 @@
-import {v1 as uuidv1, v4 as uuidv4, v3 as uuidv3, v5 as uuidv5} from 'uuid/esm-node/index.mjs';
-import * as uuid from 'uuid/esm-node/index.mjs';
+import {v1 as uuidv1, v4 as uuidv4, v3 as uuidv3, v5 as uuidv5} from 'uuid';
+import * as uuid from 'uuid';
 
 console.log('uuidv1()', uuidv1());
 

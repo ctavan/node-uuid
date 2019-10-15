@@ -1,9 +1,9 @@
 import assert from 'assert';
 
-import v1 from './v1.js';
-import v3 from './v3.js';
-import v4 from './v4.js';
-import v5 from './v5.js';
+import v1 from './v1';
+import v3 from './v3';
+import v4 from './v4';
+import v5 from './v5';
 
 function usage() {
   console.log('Usage:');

@@ -1,4 +1,4 @@
-import bytesToUuid from './bytesToUuid.js';
+import bytesToUuid from './bytesToUuid';
 
 function uuidToBytes(uuid) {
   // Note: We assume we're being passed a valid uuid string

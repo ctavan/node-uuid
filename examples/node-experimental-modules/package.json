@@ -10,6 +10,7 @@
     "test": "node --experimental-modules example.js"
   },
   "dependencies": {
+    "graphql": "^14.5.8",
     "uuid": "github:ctavan/uuid-esm#master"
   }
 }
